@@ -1,52 +1,35 @@
-# Pixora Shield
+ ☀️ SolarWise – Smart Solar Energy Calculator
 
-Pixora Shield is a focused privacy MVP that uploads a video, detects faces, and
-optionally detects license plates, then produces an MP4 with those regions
-blurred.
+About the Project
 
-By default, every detected face is blurred. Enable “Protect the main person”
-in the frontend to keep the largest/tracked face visible and blur other faces.
-Short detector misses are covered by frame-to-frame tracking. License plates are detected only by a
-configured model: set `PLATE_MODEL_PATH` for local YOLO weights, or set
-`ROBOFLOW_API_KEY`, `ROBOFLOW_MODEL_ID`, and optional `ROBOFLOW_VERSION` for a
-hosted Roboflow model.
+SolarWise is a smart solar energy calculator designed to help users understand solar power generation, electricity savings, and the benefits of switching to renewable energy.
 
-## Roboflow computer vision plugin
+Problem Statement
 
-On the machine running Claude Code, add the official plugin once:
+Many people don’t know how much electricity solar panels can generate, how much money they can save, or how long it takes to recover their solar installation cost.
 
-```powershell
-claude plugin marketplace add roboflow/computer-vision-skills
-claude plugin install roboflow
-```
+Our Solution
 
-This plugin is for model selection, deployment, datasets, and inference
-workflows. It does not make the uploaded video API detect plates by itself.
+SolarWise provides a simple calculator to estimate solar energy production, electricity bill savings, and investment payback using basic user inputs.
 
-Processed videos are browser-ready MP4/H264. The backend uses bundled
-`imageio-ffmpeg` to transcode OpenCV output when FFmpeg is not installed on the
-system.
+Features
 
-## Run locally
+* Solar savings calculator
+* Estimated electricity generation
+* Electricity bill savings
+* Solar investment payback estimation
+* Simple and user-friendly interface
 
-Backend:
+Technologies Used
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python -m src.web.backend.run
-```
+* HTML
+* CSS
+* JavaScript
 
-Frontend:
+Impact
 
-```bash
-cd src/web/frontend
-npm install
-npm run dev
-```
+SolarWise helps people make informed decisions about solar energy, encourages renewable energy adoption, and promotes a greener future.
 
-Open `http://localhost:3000`. The API runs at `http://localhost:5000`.
+⸻
 
-
-
+Built with ☀️ for a sustainable future.
